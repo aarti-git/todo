@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+
+  <body>
+    <input type="text" name="value" placeholder="text area" id="input" />
+    <button onclick="myfunction()">try it</button>
+    <p id="demo"></p>
+  </body>
+  <script>
+    function myfunction() {
+      var textnote = document.getElementById("input");
+      var n = textnote.value;
+      document.getElementById("demo").innerHTML = n;
+      textnote.value = "";
+    }
+
+    var p = document.getElementById("demo");
+    p.addEventListener("dblclick", function (event) {
+      p.innerHTML =
+        "<input type='text' name='value' value='" +
+        p.innerText +
+        "' id='edittext' onkeyup='printText(event)'>";
+    });
+
+    function printText(event) {
+      if (event.keyCode === 13) {
+        var editText = document.getElementById("edittext").value;
+        document.getElementById("demo").innerHTML = editText;
+      }
+    }
+
+    //  for edit******************
+    // <div contenteditable="true">
+    //     This text can be edited by the user.
+    // </div>
+  </script>
+</html>

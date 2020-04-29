@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>call previous element</h1>
+    <div class="button-collection">
+      <button id="1" onclick="myfunction(this)">1</button>
+      <button id="2" onclick=" myfunction(this)">2</button>
+      <button id="3" onclick=" myfunction(this)">3</button>
+      <button id="4" onclick=" myfunction(this)">4</button>
+    </div>
+    <script>
+      var isClick = "previously no any button is active";
+      function myfunction(el) {
+        alert(isClick);
+        var x = el.innerText;
+        isClick = x;
+      }
+    </script>
+  </body>
+</html>

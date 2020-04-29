@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <!--attibute Events-->
+    <h1 id="heading">hii i am heading</h1>
+    <button onclick="myFunction()">try it</button>
+    <button onclick="this.style.display='none'">try it</button>
+    <script>
+      // in normal html
+      function myFunction() {
+        var header = document.getElementById("heading");
+        header.innerHTML = "i am change";
+      }
+
+      // event in javascript
+      var header = document.getElementById("heading");
+      header.addEventListener("mouseover", function () {
+        this.style.color = "red";
+        this.style.backgroundColor = "pink";
+      });
+
+      //event in javascript
+    </script>
+  </body>
+</html>
