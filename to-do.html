@@ -41,8 +41,10 @@
           <button class="btn" onclick="completList(this)">
             completed
           </button>
-          <button id="clear-btn">clear list</button>
-          <a href="" id="ancher-complet-all">Complete All</a>
+          <button id="clear-btn" onclick="clearCompleted()">
+            clear competed
+          </button>
+          <!-- <a id="ancher-complet-all">Complete All</a> -->
         </div>
       </section>
       <section class="about-todo">
@@ -84,6 +86,7 @@
 
             //console.log(n);
           });
+          //
 
           //new list elemrnt remove in complit list ..
           if (applicationState == "completed") {
@@ -143,30 +146,32 @@
             el.parentElement.style.display = "none";
           }
         }
-        var getClearBtn = document.getElementById("clear-btn");
-        getClearBtn.addEventListener("click", function () {
-          if (el.checked) {
-            el.parentElement.remove();
-            getClearBtn.style.display = "none";
-          }
-        });
       }
-      // directly delet list
-      // function clearbtton() {
-      //   var callcheckbox = document.querySelectorAll(".checboox-edit");
-      //   for (var i = 0; i < callcheckbox.length; i++) {
-      //     var item = callcheckbox[i];
-      //     if (item.checked) {
-      //       item.parentElement.remove();
-      //     }
-      //   }
-      // }
 
+      function clearCompleted() {
+        var callcheckbox = document.querySelectorAll(".checboox-edit");
+        var footer = document.querySelector(".todo-footer-section");
+        for (var i = 0; i < callcheckbox.length; i++) {
+          var item = callcheckbox[i];
+          var itemParent = item.parentElement;
+          if (item.checked) {
+            itemParent.remove();
+            counter = counter - 1;
+          }
+        }
+
+        document.querySelector(".items").innerHTML = counter + " items left";
+
+        if (counter == 0) {
+          footer.style.display = "none";
+        }
+      }
+
+      //celarCCliked = false;
       function downButtoChecked(el) {
         var getClearBtn = document.getElementById("clear-btn");
-        getClearBtn.style.display = "none";
+        getClearBtn.style.display = "inline-block";
         var callcheckbox = document.querySelectorAll(".checboox-edit");
-        var completAll = document.getElementById("ancher-complet-all");
         for (var i = 0; i < callcheckbox.length; i++) {
           var item = callcheckbox[i];
           var itemParent = item.parentElement;
@@ -174,15 +179,10 @@
             //conditin true
             item.checked = true;
             item.nextSibling.classList.add("checkcss");
-            completAll.style.display = "inline-block";
-            completAll.classList.add("complet-all-clickbtn");
-            // clear buttonadd
-            completAll.addEventListener("click", function () {
-              myfunction(event).reload();
-            });
           } else {
             item.checked = false;
             item.nextSibling.classList.remove("checkcss");
+            getClearBtn.style.display = "none";
           }
         }
         downClick = !downClick;
