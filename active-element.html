@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      .todo-footer button {
+        outline: none;
+        cursor: pointer;
+      }
+      .active,
+      .items:hover {
+        border: 1px solid goldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>active element and onclick change active button</h1>
+    <div class="todo-footer">
+      <button class="items">items left</button>
+      <button class="items active">All</button>
+      <button class="items">Active</button>
+      <button class="items">completed</button>
+    </div>
+    <script>
+      var btnHeader = document.querySelector(".todo-footer");
+      var btns = btnHeader.getElementsByClassName("items");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+  </body>
+</html>
