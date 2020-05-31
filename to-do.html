@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <link rel="stylesheet" type="text/css" href="css/todo-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css" />
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body>
+    <section class="page-wrapper">
+      <div class="header">
+        <h1>todos</h1>
+      </div>
+      <section class="input-desigen">
+        <button
+          id="down-button"
+          onclick="downButtoChecked(this)"
+          class="fas fa-chevron-down"
+        ></button>
+        <input
+          type="text"
+          name="value"
+          placeholder="text area"
+          class="text-input"
+          id="input"
+          onkeyup="myfunction(event,this)"
+        />
+      </section>
+      <section>
+        <ul id="note-list"></ul>
+      </section>
+      <section class="todo-footer-section">
+        <div class="todo-footer">
+          <button class="items">items left</button>
+          <button class="btn active" onclick="allList()">
+            All
+          </button>
+          <button class="btn" onclick="activList()">
+            Active
+          </button>
+          <button class="btn" onclick="completList(this)">
+            completed
+          </button>
+          <button id="clear-btn" onclick="clearCompleted()">
+            clear competed
+          </button>
+          <!-- <a id="ancher-complet-all">Complete All</a> -->
+        </div>
+      </section>
+      <section class="about-todo">
+        <p>Double-click to edit todo</p>
+        <p>creat by Sinder Sortus</p>
+        <p>part todoMVC</p>
+      </section>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <input
+      type="text"
+      name="value"
+      placeholder="text area"
+      id="input"
+      onkeyup="myfunction(event)"
+    />
+    <p id="demo"></p>
+  </body>
+  <script>
+    function myfunction(event) {
+      console.log(event); //if you want enter key click than all variable inf write in only IF condition
+      if (event.keyCode === 13) {
+        var textnote = document.getElementById("input");
+        var n = textnote.value;
+        document.getElementById("demo").innerHTML = n;
+      }
+    }
+
+    //  second type of code for this example
+
+    // textnote.addEventListener("keyup", function myfunction(event) {
+    //   if (event.keyCode === 13) {
+    //     var n = textnote.value;
+    //     document.getElementById("demo").innerHTML = n;
+    //   }
+    //   console.log(event);
+    // });
+  </script>
+  var textNote = document.getElementById("input");
+  var n = textNote.value;
+  var list = document.createElement("li");
+  list.innerHTML =
+  "<input type='checkbox' class='checboox-edit' onclick='inputCheckbox(this)''>" +
+        "<span id='inputtext' onkeyup='printText(this, event)'>" +
+  n +
+  "</span>" +
+  "<button class='cross-button' onclick='reMoveList(this)'> x </button>";
+  
+  document.getElementById("note-list").appendChild(list);
+  list.classList.add("text-input");
+  list.classList.add("list-design");
+  textNote.value = "";
+
+</html>

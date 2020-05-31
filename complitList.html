@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div>
+      <button onclick="complitList()">complet</button>
+      <input
+        type="text"
+        name="value"
+        onkeyup="myFunction(this,event)"
+        id="input"
+      />
+      <ul class="myList"></ul>
+    </div>
+    <script>
+      function myFunction(el, event) {
+        if (event.keyCode === 13) {
+          var x = el.value;
+          var list = document.createElement("li");
+          list.innerHTML = x;
+          document.querySelector(".myList").appendChild(list);
+          document.getElementById("input").value = " ";
+        }
+      }
+
+      function complitList() {
+        document.getElementById("input").setAttribute("value", "");
+      }
+    </script>
+  </body>
+</html>

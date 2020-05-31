@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div>
+      <input type="text" name="" id="iAmInput" />
+      <button onclick="storeValue()">save</button>
+      <ul id="note-list"></ul>
+    </div>
+    <script>
+      var a = "name";
+      var b = "myList";
+
+      var savedValue = localStorage.getItem(a);
+      var setinput = document.getElementById("iAmInput");
+      setinput.value = savedValue;
+
+      // var localLest = JSON.parse(localStorage.getItem(b));
+      // var x = toString(localLest);
+      var x = localStorage.getItem(b);
+
+      // for (var i = 0; i < x; i++) {
+      //   var item = x[i];
+      var printHear = document.getElementById("note-list");
+
+      printHear.innerHTML = x;
+
+      // getSave(a, "iAmInput");
+      // getSave(b, "note-list");
+
+      // function getSave(x, y) {
+      //   var saveV = localStorage.getItem(x);
+      //   var getId = document.getElementById(y);
+      //   if (x == a) {
+      //     getId.value = saveV;
+      //   } else {
+      //     for (var i = 0; i < saveV; i++) {
+      //       var item = [i];
+      //       var saveItem = item;
+      //       getId.innerHTML = saveItem;
+      //     }
+      //   }
+      // }
+
+      function storeValue() {
+        var input = document.getElementById("iAmInput");
+        var list = document.createElement("li");
+        list.innerHTML = input.value;
+        document.getElementById("note-list").appendChild(list);
+        // var myObject = JSON.stringify(list);
+        localStorage.setItem(a, input.value);
+        localStorage.setItem(b, list.innerHTML);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- var printHear = document.querySelectorAll(".note-list"); for (var i = 0; i <
+printHear.length; i++) { var item=printHear[i]; } var
+s=(document.getElementById("note-list").innerHTML=item); -->

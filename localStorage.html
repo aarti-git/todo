@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div>
+      <input type="text" name="" id="input" />
+      <button onclick="refreshValue()">save</button>
+    </div>
+    <script>
+      var a = "myname";
+      var savedValue = localStorage.getItem(a);
+      var setinput = document.getElementById("input");
+      setinput.value = savedValue;
+      function refreshValue() {
+        var x = document.getElementById("input");
+        alert(" save value " + x.value);
+        localStorage.setItem(a, x.value);
+      }
+    </script>
+  </body>
+</html>
