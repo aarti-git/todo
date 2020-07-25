@@ -68,6 +68,9 @@
   background-color: rgba(222, 220, 220, 0.6);
   border-radius: 50%;
 }
+/* #editTextWorde {
+  font-size: 23px;
+} */
 .todo-footer-section {
   display: none;
 }
@@ -92,7 +95,7 @@
   outline: none;
 }
 .items {
-  margin-right: 50px;
+  margin-right: 35px;
 }
 #clear-btn {
   display: none;

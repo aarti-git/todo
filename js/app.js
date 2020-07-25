@@ -72,6 +72,10 @@ function reMoveList(element) {
   counter = counter - 1;
   var countNo = document.querySelector(".items");
   countNo.innerHTML = counter + " items left";
+  if (counter == 0) {
+    var footerNote = document.querySelector(".todo-footer-section");
+    footerNote.style.display = "none";
+  }
 }
 
 function printText(el, event) {
@@ -179,7 +183,7 @@ function getCheckbox(callback) {
 
 var btnHeader = document.querySelector(".todo-footer");
 var btns = btnHeader.getElementsByClassName("btn");
-let d = "hello";
+// let d = "hello";
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("active");
