@@ -38,12 +38,11 @@ function addNewList(word) {
     myspan.innerHTML =
       "<input type='text' name='value' value='" +
       myspan.innerText +
-      "' id='editTextWorde''>";
+      "'id='editTextWorde' class='edit-input-design''>";
 
     //console.log(n);
   });
   //
-
   //new list elemrnt remove in complit list ..
   if (applicationState == "completed") {
     list.style.display = "none";
